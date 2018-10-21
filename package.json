@@ -1,0 +1,34 @@
+{
+  "name": "wilx.fun",
+  "version": "0.0.1",
+  "description": "source code of wilx.fun",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev app",
+    "build": "vuepress build app",
+    "clean": "rm -rf app/.vuepress/dist",
+    "deploy": "chmod 777 ./scripts/deploy.sh & ./scripts/deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wil-x/wil-x.github.io.git"
+  },
+  "keywords": [
+    "wilx.fun",
+    "blog",
+    "vuepress"
+  ],
+  "author": "wilx<hi.wilx@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wil-x/wil-x.github.io/issues"
+  },
+  "homepage": "https://github.com/wil-x/wil-x.github.io#readme",
+  "devDependencies": {
+    "vuepress": "^0.14.4"
+  },
+  "dependencies": {
+    "dayjs": "^1.7.7",
+    "prismjs": "^1.15.0"
+  }
+}

@@ -1,0 +1,22 @@
+@require './config'
+@require './layout'
+@require './code'
+
+*
+  box-sizing border-box !important
+  outline none
+
+html, body
+  font-size $fontSize
+  font-family $fontFamily
+  font-weight 300
+  line-height $lineHeight
+  height 100vh
+  margin 0
+  overflow-y hidden
+
+a
+  text-decoration none
+
+  &:hover
+    text-decoration underline
