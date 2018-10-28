@@ -19,7 +19,6 @@
 
 <script>
 import Navbar from '../components/navbar'
-import loadingGif from '../public/loading.gif'
 
 export default {
   data() {
