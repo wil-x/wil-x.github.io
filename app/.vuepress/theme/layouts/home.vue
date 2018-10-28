@@ -1,6 +1,8 @@
 <template>
   <div class="container flex-row">
-    <div class="pics" />
+    <div
+      class="pics"
+      :style="picStyles" />
     <div class="main flex-col">
       <navbar />
       <div class="post flex-col row-center col-center">
@@ -17,8 +19,14 @@
 
 <script>
 import Navbar from '../components/navbar'
+import loadingGif from '../public/loading.gif'
 
 export default {
+  data() {
+    return {
+      picStyles: {},
+    }
+  },
   components: {
     Navbar,
   },
@@ -29,6 +37,21 @@ export default {
       return posts[0]
     },
   },
+  methods: {
+    asyncLoadImg() {
+      const img = new Image()
+      img.onload = (e) => {
+        this.picStyles = {
+          backgroundImage: `url(${e.currentTarget.src})`,
+          backgroundSize: 'cover'
+        }
+      }
+      img.src = 'https://source.unsplash.com/random/1600x900'
+    },
+  },
+  mounted() {
+    this.asyncLoadImg()
+  }
 }
 </script>
 
@@ -37,9 +60,10 @@ export default {
   @require '../styles/function'
 
   .pics
-    background-image url('https://source.unsplash.com/random/1600x900');
-    background-size cover;
-    background-position center;
+    background-image url(../public/loading.gif)
+    background-position center
+    background-repeat no-repeat
+    background-size 60px
     flex 4
 
   .main
