@@ -1,15 +1,6 @@
 import dayjs from 'dayjs'
-import { checkIsMobile } from './helper'
 
 export default ({ Vue }) => {
-  Vue.mixin({
-    mounted() {
-      if (checkIsMobile()) {
-        this.$router.replace('/blackhole/')
-      }
-    }
-  })
-
   Vue.filter('date', (val) => {
     const format = 'YYYY-MM-DD'
 
